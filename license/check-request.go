@@ -46,7 +46,7 @@ func CheckedFaceRecog() {
 	}
 	var jsonStr = []byte(string(requestBody))
 
-	hit, err2 := http.NewRequest("POST", "link", bytes.NewBuffer(jsonStr))
+	hit, err2 := http.NewRequest("POST", fmt.Sprintf("http://localhost:2000/face/cheked/%s", jsonResponse.Key), bytes.NewBuffer(jsonStr))
 	if err2 != nil {
 		return
 	}
